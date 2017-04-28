@@ -14,9 +14,9 @@
 	$releasedate = $_POST["releasedate"];
 	
 	$sqlproject = "INSERT INTO project(title, shortdescription, postdate, enddate, plannedrelease,  minfund, maxfund, owneremail, status, categoryname) values ('".$title."', '".$shortdescription."', now(), '".$enddate."', '".$releasedate."', ".$minfund.", ".$maxfund.", 'sg3533@nyu.edu', 'open', '".$selectedcategory."')";
-	echo $sqlproject;
+	
 	if ($conn->query($sqlproject) === TRUE) {
-	    echo "New record created successfully";
+	    echo "Congratulations!! Your project has been created successfully.";
 	} else {
 	    echo "Error: <br>" . $conn->error;
 	}

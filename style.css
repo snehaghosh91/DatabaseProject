@@ -1,7 +1,13 @@
-#header{
+#header {
 	color: #52536D;
 }
 body {
 	background-color: lightblue;
 	text-align: center;
+}
+.showerror {
+    color: red;
+}
+.star {
+	color: red;
 }

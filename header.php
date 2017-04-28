@@ -1,4 +1,5 @@
 <html>
+	<a href="recommendation.php"> Recommendations </a> </br>
 	<a href="project.php"> Create Project </a> </br>
-	<a href="recommendation.php"> Recommendations </a>
+	<a href="explore.php"> Explore Projects </a> </br>
 </html>
