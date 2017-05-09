@@ -1,12 +1,28 @@
-$( function() {
-    $( "#enddatepicker" ).datepicker({showButtonPanel: true,
-                changeMonth: true,
-                dateFormat: 'yy-mm-dd'});
+$(document).ready(function(){
+	$('img').click(function() {
+	   var id = $(this).attr('id');
+	   window.location.href = "projectdetail.php?id="+id;
+   	   return false;
+	});
+	$("#addUpdate").hide();
+        $("#updatebtn").click(function(e) {
+            $("#addUpdate").show();
+            $("#updatebtn").hide();
 
-    $( "#releasedatepicker" ).datepicker({showButtonPanel: true,
-                changeMonth: true,
-                dateFormat: 'yy-mm-dd'});
-  } );
+    });
+	$('.comment').keydown(function (e){
+        if (e.keyCode == 13) {
+            var projectid = $(this).attr('projectid');
+            var comment = $(this).val();
+            var posting = $.post('comment.php', { projectid: projectid, comment: comment });
+	        	posting.done(function( data ){
+	        		$('#comments').load('commentsdisplay.php?projectid='+projectid);
+	        	});
+        }
+	});
+});
+
+
 function validateForm() {
 	refreshErrors();
     var title = document.forms["createproject"]["title"].value;

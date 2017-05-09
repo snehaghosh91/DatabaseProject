@@ -2,6 +2,17 @@
 	<?php
 	require 'head.php'; 
 	?>
+	<script type="text/javascript">
+		$( function() {
+	    $( "#enddatepicker" ).datepicker({showButtonPanel: true,
+	                changeMonth: true,
+	                dateFormat: 'yy-mm-dd'});
+
+	    $( "#releasedatepicker" ).datepicker({showButtonPanel: true,
+	                changeMonth: true,
+	                dateFormat: 'yy-mm-dd'});
+		});
+	</script>
 <body>
 	<?php
 	require 'header.php'; 
@@ -11,7 +22,7 @@
 		<p>Project Title<span class="star">*</span> &nbsp; <input type="text" name="title">
 		 <div id="title" class="showerror">   </div></p>
 		<p>Description &nbsp; <textarea name="description" rows="2" cols="45"></textarea></p>
-	 	<p> Media &nbsp; <input type="file" name="myimage"> </p>
+	 	<p> Media <input type="file" name="myimage"> </p>
 		<p> Category<span class="star">*</span> &nbsp;
 
 		<?php 

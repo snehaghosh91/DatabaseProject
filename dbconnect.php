@@ -4,7 +4,7 @@ error_reporting(E_ALL);
 $db = 'kickstarter_schema';
 $servername = "localhost:3306";
 $username = "root";
-$password = "";
+$password = "sneha";
 // session_start();
 // Create connection
 $conn = new mysqli($servername, $username, $password, $db);

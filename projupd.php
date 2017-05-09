@@ -2,10 +2,16 @@
 function fetchUpdates($conn, $projectid) {
     $sql = "SELECT * FROM projectupdates where projectid='".$projectid."' order by updatedate";
   $result = $conn->query($sql);
+  $invcount = 0;
   while ($upd_array=mysqli_fetch_assoc($result))
   {
+    if($invcount % 2 == 0){
+      echo "<li>";
+    } else{
+      echo "<li class='timeline-inverted'>";
+    }
+    $invcount += 1;
     ?>
-    <li>
       <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
       <div class="timeline-panel">
         <div class="timeline-heading">
